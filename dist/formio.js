@@ -499,6 +499,8 @@ var Formio = function () {
   }, {
     key: 'request',
     value: function request(url, method, data, header, opts) {
+
+      console.log('formio.js/request');
       if (!url) {
         return Promise.reject('No url provided');
       }
@@ -524,9 +526,13 @@ var Formio = function () {
         var requestToken = '';
         resolve(new Promise(function (resolve, reject) {
           // Set up and fetch request
+
           var headers = header || new Headers({
             'Accept': 'application/json',
-            'Content-type': 'application/json; charset=UTF-8'
+            'Content-type': 'application/json; charset=UTF-8',
+            //////////////////////////////////////////////////////////// add by fast
+            'AngularToken': localStorage.getItem('token') || ''
+
           });
           var token = Formio.getToken();
           if (token && !opts.noToken) {
