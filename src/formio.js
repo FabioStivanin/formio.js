@@ -473,6 +473,7 @@ export class Formio {
             'Content-type': 'application/json; charset=UTF-8',
 			//////////////////////////////////////////////////////////// add by fast
             'AngularToken': localStorage.getItem('token') || ''
+			
           });
         var token = Formio.getToken();
         if (token && !opts.noToken) {
