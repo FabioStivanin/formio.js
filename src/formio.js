@@ -440,6 +440,8 @@ export class Formio {
   }
 
   static request(url, method, data, header, opts) {
+
+	console.log('formio.js/request');
     if (!url) {
       return Promise.reject('No url provided');
     }
@@ -465,9 +467,12 @@ export class Formio {
       var requestToken = '';
       resolve(new Promise(function(resolve, reject) {
         // Set up and fetch request
+
         var headers = header || new Headers({
             'Accept': 'application/json',
-            'Content-type': 'application/json; charset=UTF-8'
+            'Content-type': 'application/json; charset=UTF-8',
+			//////////////////////////////////////////////////////////// add by fast
+            'AngularToken': localStorage.getItem('token') || ''
           });
         var token = Formio.getToken();
         if (token && !opts.noToken) {
