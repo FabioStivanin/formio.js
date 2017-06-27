@@ -7288,7 +7288,7 @@ var Promise = require("native-promise-only");
 require('whatwg-fetch');
 var EventEmitter = require('eventemitter2').EventEmitter2;
 var copy = require('shallow-copy');
-
+console.log("CIAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO FORMIO");
 /**
  * The Formio interface class.
  *
